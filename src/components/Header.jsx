@@ -11,18 +11,22 @@ import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger, DropdownMenuConten
 
 const Header = () => {
 
-    const { setTheme } = useTheme()
+    // const { setTheme } = useTheme()
     const header_link = [
         {
             title: 'Home',
             path: '#',
         },
         {
-            title: 'Paper',
+            title: 'Blogs',
             path: '#',
         },
         {
-            title: 'Study',
+            title: 'Study Materials',
+            path: '#',
+        },
+        {
+            title: 'Colleges Info',
             path: '#',
         },
         {
@@ -39,9 +43,13 @@ const Header = () => {
         <header>
             <div className="w-full">
                 <div className="flex py-8 px-4 justify-between items-center">
-                    <a href="/" className='h-10'>
-                        <Image className='w-full h-full' loading='lazy' src={assets.logo1} alt='logo' />
-                    </a>
+                    <Link href="/" className='w-auto'>
+                        <h3>
+                            <span className='text-primaryColor'>DU</span>
+                            <span className='text-white dark:text-black'>niverse</span>
+                        </h3>
+                        {/* <Image className='w-full h-full' loading='lazy' src={assets.logo1} alt='logo' /> */}
+                    </Link>
                     <div className='flex items-center justify-between gap-8 '>
                         {header_link.map((items, index) => (
                             <Link className='text-lg font-semibold tracking-wide hover:text-blue-500 ' href={items.path} key={index}>
@@ -49,7 +57,8 @@ const Header = () => {
                             </Link>
                         ))}
                     </div>
-                    <DropdownMenu>
+                    <Button>Signup</Button>
+                    {/* <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button varient="outline" size="icon">
                                 <Sun color='white' className='h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100 ' />
@@ -63,7 +72,7 @@ const Header = () => {
                             <DropdownMenuItem onClick={() => setTheme("system")} >System</DropdownMenuItem>
                         </DropdownMenuContent>
 
-                    </DropdownMenu>
+                    </DropdownMenu> */}
                 </div>
             </div>
         </header>
